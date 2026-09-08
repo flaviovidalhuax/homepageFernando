@@ -66,7 +66,7 @@
   </v-navigation-drawer>
 
     <v-main>
-      <HelloWorld />
+      <Icono />
           <v-container fluid>
             <router-view></router-view>
           </v-container>
@@ -79,10 +79,14 @@
       @click="$vuetify.theme.cycle()"
     />
   </v-app>
+ <Footer />
 </template>
 
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue'
+// @ts-ignore Icono.vue is a Vue SFC without a local TypeScript declaration.
+import Icono from './components/Icono.vue';
+// @ts-ignore Footer.vue is a Vue SFC without a local TypeScript declaration.
+import Footer from './components/Footer.vue';
 import { ref } from 'vue'
 
 const drawer = ref(true)

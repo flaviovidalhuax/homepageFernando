@@ -7,13 +7,15 @@
       style="z-index: 100;"
       
     >
-      <v-img src="@/assets/icon2.png" alt="Foto de perfil"></v-img>
+      <v-img src="@/assets/icon.png" alt="Foto de perfil"></v-img>
     </v-avatar>
   </div>
+
 </template>
 
 
 
-<script lang="ts" setup>
+<script >
+
 </script>
 
