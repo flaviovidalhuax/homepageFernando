@@ -24,12 +24,51 @@
       line-height: 1.4;
       margin-top: -8px; /* junta las líneas */
     ">
+
+
+     <v-btn id="btn" rounded="xl" variant="outlined" color="#754319" class="m-3 bg-white ">
+          <a
+            :href="this.whatsapp"
+            target="_blank"
+            class="text-decoration-none text-black a-large btnMove"
+          >
+            <v-icon>mdi-whatsapp</v-icon>
+            Contac me 
+          </a>
+
+          <a
+            :href="this.whatsapp"
+            target="_blank"
+            class="text-decoration-none text-white a-small"
+          >
+            
+          </a>
+      </v-btn>
+
+      <v-btn id="btn" rounded="xl" variant="outlined" color="#754319" class="m-3 bg-white  ">
+            <a
+            :href="this.github"
+            target="_blank"
+            class="text-decoration-none text-black a-large btnMove"
+          >
+          <v-icon>mdi-github</v-icon>
+
+            github
+          </a>
+          <a
+            :href="this.github"
+            target="_blank"
+            class="text-decoration-none text-white a-small"
+          >
+           </a>
+        </v-btn>
   Designed for you.
 </h1>
 
     </v-img>
     
     <div>
+      <BtnWhat />
     <h1>Home</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi commodi doloribus repellat quia natus laborum, ab et placeat rerum nam in dolorum ad eveniet accusantium aspernatur soluta at corrupti quas.</p>
   <v-card-title>Mi Título de Tarjeta</v-card-title>
@@ -63,4 +102,25 @@
 </template>
 
 <script>
+import BtnWhat from '@/components/BtnWhat.vue';
+export default {
+  props: {
+    wa: String,
+  },
+  data() {
+    return {
+      whatsapp: "https://web.whatsapp.com/",
+      github:"https://github.com/flaviovidalhuax",
+      email:"https://mail.google.com/",
+      vid:"https://i.imgur.com/j0qnFEP.mp4",
+    };
+  },
+};
 </script>
+<style scoped>
+.btnMove:hover i{
+  font-size:30px;
+  transform: rotate(45deg);
+  color:green;
+}
+</style>
