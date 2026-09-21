@@ -25,8 +25,10 @@
       margin-top: -8px; /* junta las líneas */
     ">
 
-
-     <v-btn id="btn" rounded="xl" variant="outlined" color="#754319" class="m-3 bg-white ">
+  Designed for you.
+  
+</h1>
+  <v-btn id="btn" rounded="xl" variant="outlined" color="#754319" class="m-3 bg-white ">
           <a
             :href="this.whatsapp"
             target="_blank"
@@ -44,27 +46,6 @@
             
           </a>
       </v-btn>
-
-      <v-btn id="btn" rounded="xl" variant="outlined" color="#754319" class="m-3 bg-white  ">
-            <a
-            :href="this.github"
-            target="_blank"
-            class="text-decoration-none text-black a-large btnMove"
-          >
-          <v-icon>mdi-github</v-icon>
-
-            github
-          </a>
-          <a
-            :href="this.github"
-            target="_blank"
-            class="text-decoration-none text-white a-small"
-          >
-           </a>
-        </v-btn>
-  Designed for you.
-</h1>
-
     </v-img>
     
     <div>
