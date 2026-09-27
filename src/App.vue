@@ -72,10 +72,9 @@
           </v-container>
     </v-main>
     <v-btn
-      class="ma-3"
+      class="ma-3 bg-red btn-theme"
       icon="mdi-theme-light-dark"
       location="bottom right"
-      position="absolute"
       @click="$vuetify.theme.cycle()"
     />
   </v-app>
@@ -89,7 +88,7 @@ import Icono from './components/Icono.vue';
 import Footer from './components/Footer.vue';
 import { ref } from 'vue'
 
-const drawer = ref(true)
+const drawer = ref(false)
 const menuItems = [
   { title: 'Inicio', icon: 'mdi-home', to: '/' },
   { title: 'Servicio 1', icon: 'mdi-cog', to: '/servicio1' },
@@ -118,3 +117,11 @@ const  dising =[
         { title: 'Pool Renovation', icon: 'mdi-account', to: '/servicio4'  }
       ]
 </script>
+<style scoped>
+.btn-theme {
+  position: absolute;
+  top: 100;
+  right: 100;
+  z-index: 1000;
+}
+</style>

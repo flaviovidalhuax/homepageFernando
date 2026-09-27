@@ -1,6 +1,6 @@
 <template>
-  <v-footer dark padless class="blue-grey darken-4  darken-4">
-    <v-container fluid>
+  <v-footer dark padless class="blue-grey darken-4  darken-4 ">
+    <v-container fluid >
       <v-row justify="center" align="center" class="py-4 ">
         <!-- Columna de información de contacto -->
         <v-col cols="12" sm="6" md="3" class="text-center">

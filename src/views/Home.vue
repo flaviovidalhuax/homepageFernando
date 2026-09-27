@@ -50,9 +50,9 @@
     
     <div>
       <BtnWhat />
-    <h1>Home</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi commodi doloribus repellat quia natus laborum, ab et placeat rerum nam in dolorum ad eveniet accusantium aspernatur soluta at corrupti quas.</p>
-  <v-card-title>Mi Título de Tarjeta</v-card-title>
+    <h1>Diseñado para ti.</h1>
+    <p>Queres la alberca de tus sueños cuantanos y lo diseñamos para ti, diseñoamos tu pisina a tu gusto.</p>
+  <v-card-title>Pools</v-card-title>
 
     <v-carousel>
     <v-carousel-item
