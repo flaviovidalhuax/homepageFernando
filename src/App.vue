@@ -2,7 +2,7 @@
   <v-app>
 
      <v-app-bar color="primary" density="compact">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon ></v-app-bar-nav-icon>
       <v-app-bar-title>Pro pools INC.</v-app-bar-title>
 
       <v-menu>
@@ -54,14 +54,14 @@
        
     
       <v-list>
-        <v-list-item
+        <!-- <v-list-item
           v-for="item in menuItems"
           :key="item.title"
           :to="item.to"
           :prepend-icon="item.icon"
           :title="item.title"
           active-color="primary"
-        ></v-list-item>
+        ></v-list-item> -->
       </v-list>
   </v-navigation-drawer>
 
@@ -90,14 +90,14 @@ import { ref } from 'vue'
 
 const drawer = ref(false)
 const menuItems = [
-  { title: 'Inicio', icon: 'mdi-home', to: '/' },
-  { title: 'Servicio 1', icon: 'mdi-cog', to: '/servicio1' },
-  { title: 'Servicio 2', icon: 'mdi-cloud', to: '/servicio2' },
-  { title: 'Servicio 3', icon: 'mdi-account', to: '/servicio3' },
+  // { title: 'Inicio', icon: 'mdi-home', to: '/' },
+  // { title: 'Servicio 1', icon: 'mdi-cog', to: '/servicio1' },
+  // { title: 'Servicio 2', icon: 'mdi-cloud', to: '/servicio2' },
+  // { title: 'Servicio 3', icon: 'mdi-account', to: '/servicio3' },
   
-  { title: 'Contact', icon: 'mdi-account', to: '/Cont' },
-  { title: 'About Galery', icon: 'mdi-information', to: '/Galery' },
-  { title: ' ServiceOport', icon: 'mdi-information', to: '/ServiceOport' }
+  // { title: 'Contact', icon: 'mdi-account', to: '/Cont' },
+  // { title: 'About Galery', icon: 'mdi-information', to: '/Galery' },
+   { title: ' ServiceOport', icon: 'mdi-information', to: '/ServiceOport' }
 ]
 const  services =[
         { title: 'Pool Cleaning', icon: 'mdi-cog', to: '/servicio1'  },
