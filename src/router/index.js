@@ -20,7 +20,14 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  // Los enlaces del encabezado apuntan a secciones de la página de inicio (#servicios, #contacto...)
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, top: 110, behavior: 'smooth' }
+    }
+    return { top: 0 }
+  }
 })
 
 export default router
