@@ -21,7 +21,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  // Los enlaces del encabezado apuntan a secciones de la página de inicio (#servicios, #contacto...)
+  // Header links point to sections of the home page (#services, #contact...)
   scrollBehavior(to) {
     if (to.hash) {
       return { el: to.hash, top: 110, behavior: 'smooth' }
