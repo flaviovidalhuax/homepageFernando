@@ -1,127 +1,48 @@
 <template>
-  <v-app>
+  <header class="top">
+    <div class="wrap">
+      <RouterLink class="brand" to="/" aria-label="365° Pro Pools Inc., home">
+        <img src="/img/emblem.png" width="42" height="42" alt="">
+        <span>365° Pro Pools</span>
+      </RouterLink>
+      <div class="tools">
+        <button class="icon-btn" type="button" aria-label="Switch between light and dark theme" @click="toggleTheme">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+        </button>
+        <RouterLink class="btn small" :to="{ path: '/', hash: '#contact' }">Get a quote</RouterLink>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <RouterLink :to="{ path: '/', hash: '#services' }">Services</RouterLink>
+        <RouterLink :to="{ path: '/', hash: '#projects' }">Projects</RouterLink>
+        <RouterLink :to="{ path: '/', hash: '#process' }">How we work</RouterLink>
+      </nav>
+    </div>
+  </header>
 
-     <v-app-bar color="primary" density="compact">
-      <v-app-bar-nav-icon ></v-app-bar-nav-icon>
-      <v-app-bar-title>Pro pools INC.</v-app-bar-title>
+  <RouterView />
 
-      <v-menu>
-            <template v-slot:activator="{ props }">
-                <v-btn
-                color="red darken-1"
-                v-bind="props"
-                >
-                About Us
-                </v-btn>
-            </template>
-            <v-list>
-                <v-list-item
-                v-for="(item, index) in callUs"
-                :key="index"
-                  :to="item.to"
-                :value="index"
-                >
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
-      </v-menu>
-
-      <v-menu>
-            <template v-slot:activator="{ props }">
-                <v-btn
-                color="red darken-1"
-                v-bind="props"
-                >
-                Services
-                </v-btn>
-            </template>
-            <v-list>
-                <v-list-item
-                v-for="(item, index) in services"
-                :key="index"
-                  :to="item.to"
-                :value="index"
-                >
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
-      </v-menu>
-
-
-
-    </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app>
-       
-    
-      <v-list>
-        <!-- <v-list-item
-          v-for="item in menuItems"
-          :key="item.title"
-          :to="item.to"
-          :prepend-icon="item.icon"
-          :title="item.title"
-          active-color="primary"
-        ></v-list-item> -->
-      </v-list>
-  </v-navigation-drawer>
-
-    <v-main>
-      <Icono />
-          <v-container fluid>
-            <router-view></router-view>
-          </v-container>
-    </v-main>
-    <v-btn
-      class="ma-3 bg-red btn-theme"
-      icon="mdi-theme-light-dark"
-      location="bottom right"
-      @click="$vuetify.theme.cycle()"
-    />
-  </v-app>
- <Footer />
+  <footer>
+    <div class="wrap">
+      <RouterLink class="brand" to="/">
+        <img src="/img/emblem.png" width="42" height="42" alt="">
+        <span>365° Pro Pools Inc.</span>
+      </RouterLink>
+      <span class="meta">pool.360.inc@gmail.com</span>
+      <span class="meta">661 313 0870</span>
+      <a class="meta" href="https://t.me/+526613130870" target="_blank" rel="noopener">Telegram</a>
+      <p class="legal">© {{ year }} 365° Pro Pools Inc. All rights reserved.</p>
+    </div>
+  </footer>
 </template>
 
-<script lang="ts" setup>
-// @ts-ignore Icono.vue is a Vue SFC without a local TypeScript declaration.
-import Icono from './components/Icono.vue';
-// @ts-ignore Footer.vue is a Vue SFC without a local TypeScript declaration.
-import Footer from './components/Footer.vue';
-import { ref } from 'vue'
+<script setup lang="ts">
+const year = new Date().getFullYear()
 
-const drawer = ref(false)
-const menuItems = [
-  // { title: 'Inicio', icon: 'mdi-home', to: '/' },
-  // { title: 'Servicio 1', icon: 'mdi-cog', to: '/servicio1' },
-  // { title: 'Servicio 2', icon: 'mdi-cloud', to: '/servicio2' },
-  // { title: 'Servicio 3', icon: 'mdi-account', to: '/servicio3' },
-  
-  // { title: 'Contact', icon: 'mdi-account', to: '/Cont' },
-  // { title: 'About Galery', icon: 'mdi-information', to: '/Galery' },
-   { title: ' ServiceOport', icon: 'mdi-information', to: '/ServiceOport' }
-]
-const  services =[
-        { title: 'Pool Cleaning', icon: 'mdi-cog', to: '/servicio1'  },
-        { title: 'Pool Repair', icon: 'mdi-cloud', to: '/servicio2'  },
-        { title: 'Pool Maintenance', icon: 'mdi-account', to: '/servicio3'  },
-        { title: 'Pool Renovation', icon: 'mdi-account', to: '/servicio4'  }
-      ]
-const callUs = [
-        { title: 'Contacto', icon: 'mdi-cog', to: '/Cont' },
-        { title: 'galery', icon: 'mdi-cloud', to: '/Galery' },
-        { title: 'Servicio Oportunity', icon: 'mdi-account', to: '/ServiceOport' },
-      ]
-const  dising =[
-        { title: 'diseño', icon: 'mdi-cog', to: '/servicio1'  },
-        { title: 'Pool Repair', icon: 'mdi-cloud', to: '/servicio2'  },
-        { title: 'Pool Maintenance', icon: 'mdi-account', to: '/servicio3'  },
-        { title: 'Pool Renovation', icon: 'mdi-account', to: '/servicio4'  }
-      ]
-</script>
-<style scoped>
-.btn-theme {
-  position: absolute;
-  top: 100;
-  right: 100;
-  z-index: 1000;
+function toggleTheme() {
+  const root = document.documentElement
+  const current = root.getAttribute('data-theme')
+  const dark = current ? current === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+  root.setAttribute('data-theme', dark ? 'light' : 'dark')
 }
-</style>
+</script>
